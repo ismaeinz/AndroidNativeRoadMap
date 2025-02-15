@@ -1,2 +1,2 @@
 flow
-[room](room.png)
+<img src="room.png"/>
