@@ -1,2 +1,2 @@
 flow
-[room](res/drawable/room.png)
+[room](drawable/room.png)
