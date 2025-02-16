@@ -1,13 +1,6 @@
+الأول بتعرف الـModel
+بعدين الـinterface
 
-
-data class Gym(
-val id: Int,
-@SerializedName("gym_name")
-val name: String,
-@SerializedName("gym_location")
-val place: String,
-var isFavourite: Boolean = false,
-)
 
 =>
 interface GymsApiServices {

@@ -5,14 +5,16 @@
 
 ui =>compose && xml
 stateMangement ,liveData,FlowData ,viewModel
-HandleApi =>RetroFit  => https://youtu.be/8IhNq0ng-wk
-
+HandleApi =>RetroFit  
+https://www.youtube.com/watch?v=8IhNq0ng-wk&ab_channel=AhmedGuedmioui
 Async =>Coroutine,workManger
 storage =>RoomDb 
+https://www.youtube.com/watch?v=5pjdE2wnJ0s&t=122s&ab_channel=AhmedGuedmioui
 ,shared Preferences,DataStore,FileSystem
 Navigation
 flow
 Di =>Hilt,Dagger
+https://www.youtube.com/watch?v=I338rqAVFaE&t=69s&ab_channel=AhmedGuedmioui
 CleanCode =>DesignPatterns,CleanArch =>mvi,mvvm
 Testing =>JUnit ,Espresso
 fireBase
