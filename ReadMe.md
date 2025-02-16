@@ -5,9 +5,11 @@
 
 ui =>compose && xml
 stateMangement ,liveData,FlowData ,viewModel
-HandleApi =>RetroFit
+HandleApi =>RetroFit  => https://youtu.be/8IhNq0ng-wk
+
 Async =>Coroutine,workManger
-storage =>RoomDb,shared Preferences,DataStore,FileSystem
+storage =>RoomDb 
+,shared Preferences,DataStore,FileSystem
 Navigation
 flow
 Di =>Hilt,Dagger

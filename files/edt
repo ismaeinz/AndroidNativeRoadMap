@@ -1,0 +1,5 @@
+val posts = vmPosts.state.toMutableList()
+                    val getPostIdLove = posts.indexOfFirst { it.id == postId }
+                    posts[getPostIdLove] =
+                        posts[getPostIdLove].copy(isFavourite = !posts[getPostIdLove].isFavourite)
+                    vmPosts.state = posts
