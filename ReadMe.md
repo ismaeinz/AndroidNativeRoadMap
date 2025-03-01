@@ -1,3 +1,6 @@
+فيه تلات مجالات محتاج تذاكرهم بالترتيب 
+الكوتلن والui والاندرويد
+
 ui =>
 compose
 && xml && Activity ,Activity LifeCycle,stateChanges,Tasks,BackStack

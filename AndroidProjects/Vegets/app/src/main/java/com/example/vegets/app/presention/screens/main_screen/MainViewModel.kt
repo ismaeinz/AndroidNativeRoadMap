@@ -32,7 +32,8 @@ class MainViewModel : ViewModel() {
 
     }
 
-    private suspend fun fetchData(): List<Product> = withContext(Dispatchers.IO) {
+    private suspend fun fetchData(): List<Product> =
+        withContext(Dispatchers.IO) {
         try {
             val getData = ApiServicesInstance.api.getAllProductsFromApi()
             dao.saveAllProductsToDb(getData)
