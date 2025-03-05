@@ -7,8 +7,8 @@
 Injection
 لو عندي كلاس معين عايز انستانس منه في الابلكيشن بتاعي من غير ما اعمل انا انستانس هستخدم الـinjection علي الفاريبول نفسه  ال انا محتاج انستنس منه
 
-module
-بتساعدني اعمل instance من الـthirdParty زي الـretroFit
+
+الـmodule :بتساعدني اعمل instance من الـthirdParty زي الـretroFit
 الـ@Module والـ@Provides مرتبطين ببعض
 ولكن Digger محتاجه compoenent تـinstall فيه الـmodule بتاعتنا
 هيلت لتوفر لينا PredefinedComponets
