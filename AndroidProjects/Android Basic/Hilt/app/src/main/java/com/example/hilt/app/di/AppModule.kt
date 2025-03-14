@@ -8,19 +8,18 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-//بيحدد اللايف تايم بتاع الinstance
-@InstallIn(SingletonComponent::class)
-
-
+@InstallIn(SingletonComponent::class) //لايف تايم
 object AppModule {
     @Provides
-    @Singleton //عشان استخدم نفس الinstance كل مره ولو ماستخدمتهاش هيديني انستانس مختلف كل مره
+    @Singleton //عشان توفر ليا نفس الانستانس
     fun provideApi(): SomeApi {
         return Retrofit.Builder()
             .baseUrl("")
+//            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(SomeApi::class.java)
     }

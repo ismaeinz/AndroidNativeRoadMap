@@ -1,7 +1,7 @@
 الـinit  لما بعمل انستانس من الكلاس الـinit هي أول حاجه تتنفذ
-الـabstract
+الـabstract مش بعرف اعمل منه اوبجكت مجرد شكل عام والكلاس ال هيورث مني هو ال فيه ال امبليمنتيشن
+
 يمكننا من عمل متغيرات بدون اعطاءها قيم أوليه وانشاء فانكشن بدون body
-مش بعرف اعمل منه اوبجكت
 
 abstract class Animal{
 abstract name:String
@@ -15,8 +15,9 @@ override var name=""
 override fun makeSound(){
 }
 }
-
-
+الـdataClass مجرد كلاس بخزن فيه بيانات
+الـsealedClass بيديني تحكم شوي لان الـsubClasses بتاعته بتكون محدده
+الـenumClass
 
 
 companion object{
@@ -82,7 +83,6 @@ with
 var content:String?=null
 lateinit var content:String
 بستخدمها للتعريف وبعدين هتديها قيمه
-
 
 
 
