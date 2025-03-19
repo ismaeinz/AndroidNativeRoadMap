@@ -1,0 +1,52 @@
+الـkotlinFlow  ظهرت عشان تحل مشاكل الـchannels ده لأن الـchannels كان بتطلعـstreamOfData حتي لو مفيشـcollector
+يعني نقدر نقول ان الـflow تصحيح لأخطاء الـchannels
+الـproducer هيطلع داتا للـintermediate هيستقبل الداتا ديـcollector
+الـproducer والـintermediate بيشتغلوا في نفس الـcontext ال بيشتغل فيه الـcollector وبالتالي هياخد الوقت الأكتر
+        setContent {
+            runBlocking {
+                var f1 = flow<Int> {
+                    for (i in 1..4) {
+                        emit(i)
+                        delay(1000)
+                    }
+                }
+                var f2 = flow<String> {
+                    val list = listOf<String>("a", "b", "c")
+                    for (i in list) {
+                        emit(i)
+                        delay(1000)
+                    }
+                }
+
+//                    .filter { i -> i < 5 }
+//                    .buffer()
+//                    .collect {
+//                        Log.d("i is  :", it.toString())
+//                    }
+                f1.zip(f2) { a: Int, b: String -> "$a:$b" }
+                    .collect {
+                        Log.d("here", it)
+                    }
+            }
+        }
+
+              setContent {
+            runBlocking {
+                val flow1 = flow<Int> {
+                    for (i in 1..4) {
+                        emit(i)
+                        delay(3000)
+                    }
+                }
+                val flow2 = flow<String> {
+                    for (ch in listOf<String>("a", "b", "c")) {
+                        emit(ch)
+                        delay(9000)
+                    }
+                }
+                flow1.zip(flow2) { a: Int, b: String -> "$a:$b" }
+                    .collect { Log.d("zip", it) }
+
+
+            }
+        }
