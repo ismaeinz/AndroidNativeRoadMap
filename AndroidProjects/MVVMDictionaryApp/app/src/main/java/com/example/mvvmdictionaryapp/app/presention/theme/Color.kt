@@ -1,5 +1,4 @@
 package com.example.mvvmdictionaryapp.app.presention.theme
-
 import androidx.compose.ui.graphics.Color
 
 val Purple80 = Color(0xFFD0BCFF)
