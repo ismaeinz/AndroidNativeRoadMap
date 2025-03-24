@@ -2,21 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-//=>GradleBuild:plugins
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
-}
-
-kapt {
-    correctErrorTypes = true
 }
 
 android {
-    namespace = "com.example.mvvmdictionaryapp"
+    namespace = "com.example.howtoshownotificationsinandroid"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mvvmdictionaryapp"
+        applicationId = "com.example.howtoshownotificationsinandroid"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -47,28 +40,6 @@ android {
 }
 
 dependencies {
-    // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
-
-    // Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.49")
-    kapt("com.google.dagger:hilt-compiler:2.44")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
-    // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-
-    // Coroutine Lifecycle Scopes
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-
-    // System ui controller
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

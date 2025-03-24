@@ -1,4 +1,4 @@
-package com.example.mvvmdictionaryapp.app.presention
+package com.example.mvvmdictionaryapp.app.presention.events
 
 sealed class MainUiEvents {
     data class OnSearchWordChange(

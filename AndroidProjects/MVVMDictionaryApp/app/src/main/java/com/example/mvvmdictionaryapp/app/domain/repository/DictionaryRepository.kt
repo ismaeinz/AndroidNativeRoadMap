@@ -9,4 +9,4 @@ interface DictionaryRepository {
         word: String
     ): Flow<Result<WordItem>>
 
-}
+} 
