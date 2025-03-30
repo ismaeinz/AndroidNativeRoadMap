@@ -1,5 +1,7 @@
    // Navigation
-    implementation("androidx.navigation:navigation-compose:2.7.5")
+    val nav_version = "2.8.9"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    
     // Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.44")
@@ -28,14 +30,11 @@ kapt {
     correctErrorTypes = true
 }
 
-
 //=>GradleBuild:plugins
 id("com.google.devtools.ksp")
 id("kotlin-kapt")
 id("com.google.dagger.hilt.android")
-    
 
- 
 //=>topLevel
 id("com.google.dagger.hilt.android") version "2.51.1" apply false
 id("com.google.devtools.ksp") version "2.0.21-1.0.27" apply false
