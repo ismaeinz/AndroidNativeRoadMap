@@ -1,3 +1,3 @@
 # PatientTracker
 
-[projectOverview.jpg](projectOverview.jpg)
+![projectOverview.jpg](projectOverview.jpg)
