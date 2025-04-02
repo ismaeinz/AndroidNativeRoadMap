@@ -1,4 +1,4 @@
-package com.example.patienttracker.ui.theme
+package com.example.newsroom.presention.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

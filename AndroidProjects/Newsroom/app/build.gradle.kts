@@ -11,11 +11,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.patienttracker"
+    namespace = "com.example.newsroom"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.patienttracker"
+        applicationId = "com.example.newsroom"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -46,16 +46,15 @@ android {
 }
 
 dependencies {
-    implementation("androidx.compose.material3:material3:1.3.1")
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.8.9")
+    val nav_version = "2.8.9"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 
     // Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.56.1")
     kapt("com.google.dagger:hilt-compiler:2.56.1")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
@@ -73,8 +72,6 @@ dependencies {
     implementation("androidx.room:room-guava:$room_version")
     testImplementation("androidx.room:room-testing:$room_version")
     implementation("androidx.room:room-paging:$room_version")
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -91,6 +88,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    //Desugaring
+//    coreLibraryDesugaring ('com.android.tools:desugar_jdk_libs:2.0.3')
+
 }
 
 kapt {
