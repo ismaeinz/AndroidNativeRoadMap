@@ -1,4 +1,4 @@
-package com.example.newsroom.presention.theme
+package com.example.newsroom.app.presention.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

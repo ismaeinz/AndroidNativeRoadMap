@@ -1,4 +1,4 @@
-package com.example.newsroom.presention.theme
+package com.example.newsroom.app.presention.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
