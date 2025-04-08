@@ -1,6 +1,5 @@
-package com.example.newsly.ui.theme
+package com.example.newsly.app.presention.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

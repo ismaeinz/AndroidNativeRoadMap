@@ -1,4 +1,4 @@
-package com.example.newsly.ui.theme
+package com.example.newsly.app.presention.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
