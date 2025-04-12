@@ -1,6 +1,5 @@
-package com.example.todosmvvmeditable.ui.theme
+package com.example.todosmvvmeditable.app.presention.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

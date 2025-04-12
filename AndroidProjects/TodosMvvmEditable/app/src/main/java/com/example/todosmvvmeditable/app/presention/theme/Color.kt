@@ -1,4 +1,4 @@
-package com.example.todosmvvmeditable.ui.theme
+package com.example.todosmvvmeditable.app.presention.theme
 
 import androidx.compose.ui.graphics.Color
 
