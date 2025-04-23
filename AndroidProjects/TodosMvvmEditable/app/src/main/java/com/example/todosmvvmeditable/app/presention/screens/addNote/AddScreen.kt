@@ -22,19 +22,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import com.example.todosmvvmeditable.app.presention.viewModels.AddViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview(showSystemUi = true, showBackground = true, name = "Add Note")
 @Composable
-fun AddNote() {
+fun AddScreen(navController: NavHostController, addViewModel: AddViewModel = hiltViewModel()) {
 
     Scaffold(
         topBar = {
             TopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = {}) {
+                    IconButton(onClick = {
+                        navController.popBackStack()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             "",
@@ -53,7 +56,10 @@ fun AddNote() {
                 },
                 modifier = Modifier.background(Color.Gray),
             )
-        }) {
+        },
+
+
+        ) {
         Column(
             modifier = Modifier
                 .padding(it)
@@ -62,20 +68,27 @@ fun AddNote() {
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 label = {
-                    Text(text = "Write your Note ")
+                    Text(text = "Write your Note Title ")
                 },
-                value = "",
-                onValueChange = {},
+                value = addViewModel.title,
+                onValueChange = {
+                    addViewModel.title = it
+                },
                 maxLines = 1,
                 minLines = 1,
             )
             Spacer(modifier = Modifier.height(10.dp))
             OutlinedTextField(modifier = Modifier.fillMaxWidth(), label = {
-                Text(text = "Write your Note ")
-            }, value = "", onValueChange = {})
+                Text(text = "Write your Note Content  ")
+            }, value = addViewModel.content,
+                onValueChange = { addViewModel.content = it })
             Spacer(modifier = Modifier.height(10.dp))
             Button(
-                modifier = Modifier.fillMaxWidth(), onClick = {}) {
+                modifier = Modifier.fillMaxWidth(), onClick = {
+                    addViewModel.addNote(
+
+                    )
+                }) {
                 Text(text = "Add Note")
             }
 

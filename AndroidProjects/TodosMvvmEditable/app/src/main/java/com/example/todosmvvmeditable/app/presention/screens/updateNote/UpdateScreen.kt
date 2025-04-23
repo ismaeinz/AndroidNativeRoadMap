@@ -22,19 +22,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import com.example.todosmvvmeditable.app.presention.viewModels.UpdateViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview(showSystemUi = true, showBackground = true, name = "Add Note")
 @Composable
-fun UpdateNote() {
+fun UpdateScreen(
+    navController: NavHostController,
+    updateViewModel: UpdateViewModel = hiltViewModel()
+) {
 
     Scaffold(
         topBar = {
             TopAppBar(
                 navigationIcon = {
-                    IconButton(onClick = {}) {
+                    IconButton(onClick = {
+                        navController.popBackStack()
+                    }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             "",
@@ -62,20 +68,28 @@ fun UpdateNote() {
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 label = {
-                    Text(text = "Update your Note ")
+                    Text(text = "Update your Note title ")
                 },
-                value = "",
-                onValueChange = {},
+                value = updateViewModel.title,
+                onValueChange = {
+                    updateViewModel.title = it
+                },
                 maxLines = 1,
                 minLines = 1,
             )
             Spacer(modifier = Modifier.height(10.dp))
             OutlinedTextField(modifier = Modifier.fillMaxWidth(), label = {
                 Text(text = "Update your Note ")
-            }, value = "", onValueChange = {})
+            }, value = updateViewModel.content,
+                onValueChange = {
+                    updateViewModel.content = it
+                })
             Spacer(modifier = Modifier.height(10.dp))
             Button(
-                modifier = Modifier.fillMaxWidth(), onClick = {}) {
+                modifier = Modifier.fillMaxWidth(), onClick = {
+                    updateViewModel.updateNote()
+                    navController.popBackStack()
+                }) {
                 Text(text = "Update Note")
             }
 
