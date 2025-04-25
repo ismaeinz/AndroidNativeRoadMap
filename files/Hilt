@@ -1,9 +1,53 @@
 اي هو الـDI : الديباندسي انجكشن
-عندي كلاس X محتاج إلي  أستخدم فيه ميثود من كلاس Y كلاس Y  هو الديباندسي
-الفكره كلها ان انا بمد كلاس معين وليكن viewModel بكل الديباندسي ال محتاجها بدل ما هو يعملهم
+عندي كلاس  أمحتاج إلي  أستخدم فيه ميثود من كلاس ب كلاس ب هو الديباندسي
 
+
+لو عندي viewModel بيعتمد علي تابع خارجي أو بحتاج أستخدم فيه تابع خارجي زي repo أو useCase اذا هؤلاء هم الديباندسي
+ اذا نقدر نقول إن المُعتمد عليه الذي أحتاجه هو الديباندسي
+ الفكره إني بمد كلاس معين بكل احتياجاته من الانستانس ال هو محتاجها بدل ما هو ال يعملهم
+ مميزات الديباندسي انجكشن :
+ Reusability of code
+Ease of refactoring
+Ease of testing
+
+المكتبات ال بتساعدني في الديباندسي انجكشن مكتبة هيلت
+
+الأول بضيف التبعيات :
+في ملف الـbuild.gradle
+plugins {
+  id("com.google.dagger.hilt.android") version "2.56.1" apply false
+}
+بعدين :
+app/build.gradle
+plugins {
+  id("com.google.devtools.ksp")
+  id("com.google.dagger.hilt.android")
+}
+
+
+dependencies {
+  implementation("com.google.dagger:hilt-android:2.56.1")
+  ksp("com.google.dagger:hilt-android-compiler:2.56.1")
+}
+هيلت بتستخدم الـjava 8 features
+وعشان تفعلها
+android {
+  ...
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+  }
+}
+تعالي بقي نبدأ شغل
+أول حاجه محتاج تعملها هي
+class ExampleApplication : Application()
+ده بيعمل اي بيبني كل الـ Component الخاصة بالـ DI في التطبيق وبيمد كل التبعيات
+بعدين  نقطه البدايه
+@AndroidEntryPoint
 
 هيلت بتعتمد علي الانوتيشن عشان تجنريت كود في الران تايم
+اي الأنوتيشن المتوفره عندي
+
 Injection
 لو عندي كلاس معين عايز انستانس منه في الابلكيشن بتاعي من غير ما اعمل انا انستانس هستخدم الـinjection علي الفاريبول نفسه  ال انا محتاج انستنس منه
 
@@ -35,3 +79,18 @@ class MyApplication : Application()
 class MainActivity : ComponentActivity() {}
 
 تالت خطوه بتعرف الموديول
+
+
+
+المصادر :
+https://www.youtube.com/watch?v=ymATBhy-eo8&ab_channel=ShadySelim%28ShadySelim%29
+
+https://www.youtube.com/playlist?list=PLnphl9fhhiQ7arQsLCtyEvmdHgvLx_dSK
+
+
+//
+المميزات :
+نقدر نعيد استخدام الكود
+اتجنبنا نقطه الـlose copuling التغير في الكلاس ده بس
+وسهل الاختبار
+

@@ -71,6 +71,7 @@ fun HomeScreen(
                                 navController.navigate(
                                     Screens.UpdateScreen.getById(it.id)
                                 )
+
                             }) {
                                 Icon(
                                     imageVector = Icons.Default.Edit, "",
