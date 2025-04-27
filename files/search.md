@@ -1,3 +1,0 @@
-شرح الـSerializable
-map
-mapper
