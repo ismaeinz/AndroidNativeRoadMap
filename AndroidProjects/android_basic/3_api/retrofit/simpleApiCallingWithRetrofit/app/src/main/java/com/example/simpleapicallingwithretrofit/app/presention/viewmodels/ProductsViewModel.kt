@@ -7,7 +7,7 @@ import com.example.simpleapicallingwithretrofit.app.data.ApiInterfaceInstance
 import com.example.simpleapicallingwithretrofit.app.domain.model.ProductX
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class ProductsViewModel : ViewModel() {
     private val _products = mutableStateOf<List<ProductX>>(emptyList())
     private val products = _products
 
