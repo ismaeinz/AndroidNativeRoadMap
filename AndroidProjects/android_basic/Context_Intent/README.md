@@ -31,4 +31,4 @@ https://3alam.pro/alhazmy13/articles/android-context
 المصادر :
 https://muteealjabri.blogspot.com/2016/06/what-is-the-intent.html
 
-[context_intent.png](../../../files/img/context_intent.png)
+![context_intent.png](../../../files/img/context_intent.png "context_intent.png")
