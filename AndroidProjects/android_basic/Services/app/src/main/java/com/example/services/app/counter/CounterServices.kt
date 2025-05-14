@@ -1,9 +1,10 @@
 package com.example.services.app.counter
 
+//noinspection SuspiciousImport
+import android.R
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,17 +23,20 @@ class CounterServices : Service() {
 
     private fun start() {
         CoroutineScope(Dispatchers.Default).launch {
-            counter.start().collect { itStart ->
-                Log.d("counterx", itStart.toString())
+            counter.start().collect { counterValue ->
+                notification(counterValue)
             }
         }
     }
 
     //    create Notification
-    private fun notification() {
-        val counterNotification = NotificationCompat.Builder(this, "")
-    }
+    private fun notification(counterValue: Int) {
+        val counterNotification = NotificationCompat.Builder(this, "counter_channel")
+            .setSmallIcon(R.drawable.stat_notify_more).setContentTitle("Counter")
+            .setContentText(counterValue.toString()).build()
+        startForeground(1, counterNotification)
 
+    }
 
 //
 

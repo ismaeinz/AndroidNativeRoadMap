@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat
 import com.example.services.app.counter.CounterScreen
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     fun requestNotificationPermission() {
         ActivityCompat.requestPermissions(
-            this, // استبدل بـ اسم الـ Activity
+            this,
             arrayOf(Manifest.permission.POST_NOTIFICATIONS),
             100
         )
