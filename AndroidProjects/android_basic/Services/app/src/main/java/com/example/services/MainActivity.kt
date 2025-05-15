@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
+    //
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     fun requestNotificationPermission() {
         ActivityCompat.requestPermissions(
