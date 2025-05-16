@@ -14,7 +14,7 @@ class App : Application() {
         super.onCreate()
 
 
-        val id: String = "water_remainder"
+        val id = "water_remainder"
         val name: String = getString(R.string.water_remainder_channel)
         val importance: Int = NotificationManager.IMPORTANCE_LOW
 
