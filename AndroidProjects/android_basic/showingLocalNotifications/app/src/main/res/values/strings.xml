@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Showing Local Notifications</string>
+    <string name="water_remainder_channel">Water Remainder Channel</string>
+</resources>
