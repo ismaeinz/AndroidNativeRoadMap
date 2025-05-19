@@ -1,10 +1,14 @@
-package com.example.movies.app.data.local.remote.responed
+package com.example.movies.app.data.local.movie
 
-data class MovieDto(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity("MovieEntity")
+data class MovieEntity(
+
     val adult: Boolean?,
     val backdrop_path: String?,
     val genre_ids: List<Int>?,
-    val id: Int?,
     val original_language: String?,
     val original_title: String?,
     val overview: String?,
@@ -14,5 +18,8 @@ data class MovieDto(
     val title: String?,
     val video: Boolean?,
     val vote_average: Double?,
-    val vote_count: Int?
+    val vote_count: Int?,
+    @PrimaryKey
+    val id: Int?,
+    val category: String
 )

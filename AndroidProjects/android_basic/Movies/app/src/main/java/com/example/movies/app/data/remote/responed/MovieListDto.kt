@@ -1,4 +1,4 @@
-package com.example.movies.app.data.local.remote.responed
+package com.example.movies.app.data.remote.responed
 
 data class MovieListDto(
     val page: Int,

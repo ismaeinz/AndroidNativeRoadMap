@@ -1,4 +1,4 @@
-package com.example.movies.app.data.local.remote
+package com.example.movies.app.data.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Path
